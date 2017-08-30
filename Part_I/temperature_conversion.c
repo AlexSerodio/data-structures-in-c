@@ -1,8 +1,8 @@
-/*Program to convert temperature*/
+/*program to convert temperature*/
 
 #include <stdio.h>
 
-/*Auxiliar function*/
+/*auxiliar function*/
 float convert (float c)
 {
   float f;
@@ -10,7 +10,19 @@ float convert (float c)
   return f;
 }
 
-/*Main function*/
+void status(float t)
+{
+  if(t < 10)
+    printf("Temperature is too low\n");
+  else if(t < 20)
+    printf("Temperature is low\n");
+  else if(t < 30)
+    printf("Temperature is nice\n");
+  else
+    printf("Temperature is too high\n");
+}
+
+/*main function*/
 int main (void)
 {
   float t1;
@@ -23,6 +35,7 @@ int main (void)
   /*Convert Celsius to Fahrenheit*/
   t2 = convert(t1);
   /*Show the result*/
-  printf("Temperatura em Fahrenheit: %f\n", t2);
+  printf("Temperature in Fahrenheit: %f\n", t2);
+  status(t1);
   return 0;
 }
