@@ -3,6 +3,8 @@
 #include <stdio.h>
 
 int fac(int n);
+int recfac(int n);
+
 int main (void)
 {
   int r;
@@ -14,7 +16,7 @@ int main (void)
     scanf("%d", &n);
   } while(n < 0);
 
-  r = fac(n);
+  r = recfac(n);
   printf("Factorial = %d\n", r);
   return 0;
 }
@@ -27,4 +29,13 @@ int fac(int n)
   for(i = 1; i <= n; i++)
     f *= i;
   return f;
+}
+
+/*recursive function that calculates the factorial*/
+int recfac(int n)
+{
+  if(n == 0)
+    return 1;
+  else
+  return n*fac(n-1);
 }
