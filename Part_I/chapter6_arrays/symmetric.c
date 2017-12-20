@@ -12,7 +12,7 @@ float access_simple (int n, float* mat, int i, int j)
   int k;                                                                        /*element index*/
 
   if(i<0 || i>n || j<0 || j>=n){
-    printf("Acesso inválido.\n", );
+    printf("Invalid access.\n", );
     exit(1);
   }
   if(i>=j)
