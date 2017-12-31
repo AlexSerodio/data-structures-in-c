@@ -11,7 +11,7 @@ int main (void)
   int size;
   char city[80];
   printf("Type a city name: \n");
-  scanf(" %80[^\n]", city);                                                     /*read max 80 characters*/
+  scanf(" %80[^\n]", city);                         /*read max 80 characters*/
   size = lenght(city);
   printf("The string \"%s\" has %d characters.\n", city, size);
   return 0;
@@ -21,7 +21,7 @@ char upper_case(char c)
 {
   /*check if is uppercase*/
   if(c>='a' && c<='z')
-    c = c-'a'+'A';                                                              /*convert to uppercase*/
+    c = c-'a'+'A';                                  /*convert to uppercase*/
   return c;
 }
 
@@ -36,7 +36,7 @@ void read_a_line (void)
 void read_limited_characters (char* s)
 {
   char city[80];
-  scanf(" %80[^\n]", city);                                                     /*read max 80 characters*/
+  scanf(" %80[^\n]", city);                         /*read max 80 characters*/
 }
 
 /*calculates the word lenght*/
@@ -64,8 +64,8 @@ void copy (char* dest, char* orig)
 /*strcat function*/
 void cat (char* dest, char* orig)
 {
-  int i = 0;                                                                    /*index used in the dest string*/
-  int j;                                                                        /*index used in the orig string*/
+  int i = 0;                                        /*index used in the dest string*/
+  int j;                                            /*index used in the orig string*/
   /*find the end of the dest string*/
   i = 0;
   while(dest[i] != '\0')
@@ -91,11 +91,11 @@ void compare (char* s1, char s2)
       return 1;
   }
   if(s1[i]==s2[i])
-    return 0;                                                                   /*the strings are equals*/
+    return 0;                                       /*the strings are equals*/
   else if (s2[i] != '\0')
-    return -1;                                                                  /*s1 has less characters*/
+    return -1;                                      /*s1 has less characters*/
   else
-    return 1;                                                                   /*s2 has less characters*/
+    return 1;                                       /*s2 has less characters*/
 }
 
 /*duplicate a string using some functions from the lib string.h*/
