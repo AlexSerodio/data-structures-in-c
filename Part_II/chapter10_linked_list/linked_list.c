@@ -58,18 +58,29 @@ List* lst_add_ascending_order (List* l, int v)
     return l;
 }
 
+/* empty function: returns 1 if empty or 0 if not empty */
+int lst_empty (List* l)
+{
+    return (l == NULL);
+}
+
 /* print function: prints the values ​​of all elements */
 void lst_print (List* l)
 {
     List* p;
     for(p = l; p != NULL; p = p->next)
         printf("data = %d\n", p->data);
+
+    printf("+---------------+");
 }
 
-/* empty function: returns 1 if empty or 0 if not empty */
-int lst_empty (List* l)
+/* recursive print function: prints the values ​​of all elements */
+void lst_print_rec (List* l)
 {
-    return (l == NULL);
+    if(!lst_empty(l)) {
+        printf("data: %d\n",l->data);
+        lst_print_rec(l->next);
+    }
 }
 
 /* search function: returns an element from the list */
@@ -109,6 +120,21 @@ List* lst_remove (List* l, int v)
     return l;
 }
 
+/* recursive remove function: removes an element from the list */
+List* lst_remove_rec (List* l, int v)
+{
+    if(!lst_empty(l)) {
+        if(l->data == v) {
+            List* t = l;
+            l = l->next;
+            free(t);
+        } else {
+            l->next = lst_remove_rec(l->next, v);
+        }
+    }
+    return l;
+}
+
 /* free function: frees all elements from the list */
 void lst_free (List* l)
 {
@@ -118,4 +144,37 @@ void lst_free (List* l)
         free(p);
         p = t;
     }
+}
+
+/* recursive free function: frees all elements from the list */
+void lst_free_rec (List* l)
+{
+    if(!lst_empty(l)) {
+        lst_free_rec(l->next);
+        free(l);
+    }
+}
+
+/* equals function: check the equality between two lists */
+int lst_equals (List* l1, List* l2)
+{
+    List* p1;
+    List* p2;
+
+    for(p1=l1,p2=l2; p1!=NULL && p2!=NULL; p1=p1->next,p2=p2->next) {
+        if(p1->data != p2->data)
+            return 0;
+    }
+    return p1==p2;
+}
+
+/* recursive equals function: check the equality between two lists */
+int lst_equals_rec (List* l1, List* l2)
+{
+    if(l1==NULL && l2==NULL)
+        return 1;
+    else if(l1==NULL || l2==NULL)
+        return 0;
+    else
+        return l1->data==l2->data && lst_equals_rec(l1->next,l2->next); 
 }
