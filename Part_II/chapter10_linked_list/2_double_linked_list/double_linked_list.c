@@ -1,13 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "double_linked_list.h"
 
 struct dlist {
     int data;
 	struct dlist* pre;
     struct dlist* next;
 };
-
-typedef struct dlist DList;
 
 /* create function: returns an empty double linked list */
 DList* dlst_create (void)
