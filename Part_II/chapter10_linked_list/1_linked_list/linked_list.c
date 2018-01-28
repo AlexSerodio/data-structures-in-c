@@ -1,12 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "linked_list.h"
 
 struct list {
     int data;
     struct list* next;
 };
-
-typedef struct list List;
 
 /* create function: returns an empty list */
 List* lst_create (void)
