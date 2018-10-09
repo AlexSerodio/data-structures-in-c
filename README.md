@@ -1,9 +1,9 @@
 # Data Structures in C
 
-Some C algorithms from the book ["Introdução a estruturas de dados: com técnicas de programação em C"](https://www.amazon.com.br/Introdu%C3%A7%C3%A3o-Estruturas-Dados-T%C3%A9cnicas-Programa%C3%A7%C3%A3o-ebook/dp/B01JMAC3PS) (Data Structure Introduction: with programming techniques in C).
+Some C algorithms taken from the book ["Introdução a estruturas de dados: com técnicas de programação em C"](https://www.amazon.com.br/Introdu%C3%A7%C3%A3o-Estruturas-Dados-T%C3%A9cnicas-Programa%C3%A7%C3%A3o-ebook/dp/B01JMAC3PS) (Data Structure Introduction: with programming techniques in C).
 
-Below are the topics covered by the book. The project structure follows the same pattern. 
-The book was written in Portuguese so the original names were kept, followed by their equivalent translation between brackets.
+The topics covered by the book are shown below and the project structure follows the same pattern. <br /> 
+The book was written in Portuguese so the original names were kept, followed by their equivalent translation between brackets. 
 
 # Topics covered
 
